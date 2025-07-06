@@ -19,9 +19,6 @@ clean-targets:
 vars:
     "dbt_date:time_zone": "America/Sao_Paulo"
 
-clean-targets:
-  - "target"
-  - "dbt_packages"
 
 models:
   prj_dw_airflow3:
