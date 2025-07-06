@@ -1,0 +1,36 @@
+
+name: 'prj_dw_airflow3'
+version: '1.0.0'
+
+profile: 'prj_dw_airflow3'
+
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+vars:
+    "dbt_date:time_zone": "America/Sao_Paulo"
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  prj_dw_airflow3:
+
+    staging:
+      +materialized: view
+
+    intermediate:
+      +materialized: table
+
+    mart:
+      +materialized: table
